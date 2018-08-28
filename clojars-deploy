@@ -1,3 +1,6 @@
 #!/bin/bash
 
-lein deploy clojars clojusc/osgi 1.9.0-3-SNAPSHOT target/osgi-1.9.0-3-SNAPSHOT.jar pom.xml
+lein jar
+lein deploy clojars \
+  clojusc/osgi 1.9.0-3-SNAPSHOT \
+  target/osgi-1.9.0-3-SNAPSHOT.jar pom.xml
