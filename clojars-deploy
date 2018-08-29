@@ -1,6 +1,11 @@
 #!/bin/bash
+GROUP=$1
+NAME=$2
+VERSION=$3
+TARGET_PATH=$4
 
-lein jar
+unset CLASSPATH
+
 lein deploy clojars \
-  clojusc/osgi 1.9.0-3-SNAPSHOT \
-  target/osgi-1.9.0-3-SNAPSHOT.jar pom.xml
+  ${GROUP}/${NAME} ${VERSION} \
+  ${TARGET_PATH}/${NAME}-${VERSION}.jar pom.xml
